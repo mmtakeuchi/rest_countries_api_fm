@@ -1,0 +1,25 @@
+.card {
+  width: 20%;
+  margin: 40px 30px;
+  text-align: left;
+  font-weight: 600;
+  font-size: 14px;
+
+  img {
+    width: 100%;
+  }
+
+  .countryInfo {
+    padding: 10px 15px;
+
+    .countryName {
+      font-size: 18px;
+      font-weight: 900;
+    }
+
+    span {
+      font-weight: 300;
+      margin-left: 10px;
+    }
+  }
+}

@@ -2,11 +2,7 @@ nav {
   display: flex;
   justify-content: space-between;
   background: hsl(0, 0%, 100%);
-  padding: 15px;
-
-  .dark {
-    background: hsl(209, 23%, 22%);
-  }
+  padding: 15px 50px;
 
   .logo {
     font-size: 25px;
