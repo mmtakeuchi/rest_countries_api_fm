@@ -1,9 +1,12 @@
-.nav {
-  background: hsl(0, 0%, 100%);
-  border: 1px solid black;
+nav {
   display: flex;
   justify-content: space-between;
+  background: hsl(0, 0%, 100%);
   padding: 15px;
+
+  .dark {
+    background: hsl(209, 23%, 22%);
+  }
 
   .logo {
     font-size: 25px;
@@ -23,5 +26,18 @@
     margin: 5px;
     font-size: 15px;
     vertical-align: top;
+  }
+}
+
+.dark {
+  background: hsl(209, 23%, 22%);
+  color: hsl(0, 0%, 100%);
+
+  ion-icon {
+    color: hsl(0, 0%, 100%);
+  }
+
+  button span {
+    color: hsl(0, 0%, 100%);
   }
 }

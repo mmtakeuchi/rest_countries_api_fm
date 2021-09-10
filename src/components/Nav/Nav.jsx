@@ -1,18 +1,12 @@
-import React, { useState } from "react";
+import React from "react";
 import "./Nav.scss";
 
-const Nav = () => {
-  const [light, setLight] = useState(true);
-
-  const toggleScreenMode = () => {
-    setLight(!light);
-  };
-
+const Nav = ({ toggleScreen, screen }) => {
   return (
-    <div className="nav">
+    <nav className={screen ? "light" : "dark"}>
       <span className="logo">Where in the World?</span>
-      <button onClick={toggleScreenMode}>
-        {light ? (
+      <button onClick={toggleScreen}>
+        {screen ? (
           <>
             <ion-icon name="moon-outline" className="moonIcon"></ion-icon>
             <span>Light Mode</span>
@@ -24,7 +18,7 @@ const Nav = () => {
           </>
         )}
       </button>
-    </div>
+    </nav>
   );
 };
 

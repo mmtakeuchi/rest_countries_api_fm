@@ -7,6 +7,7 @@ const BASE_URL = "https://restcountries.eu/rest/v2";
 
 const App = () => {
   const [countries, setCountries] = useState([]);
+  const [screen, setScreen] = useState(true);
 
   const fetchCountries = async () => {
     const data = await axios
@@ -15,11 +16,15 @@ const App = () => {
     console.log(data);
   };
 
+  const toggleScreen = () => {
+    setScreen(!screen);
+  };
+
   useEffect(() => fetchCountries(), []);
 
   return (
     <div className="App">
-      <Nav />
+      <Nav toggleScreen={toggleScreen} screen={screen} />
       Countries
     </div>
   );
