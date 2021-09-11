@@ -1,0 +1,43 @@
+.search {
+  width: 30%;
+  margin-left: 40px;
+  text-align: left;
+  vertical-align: center;
+  background: hsl(0, 0%, 100%);
+
+  ion-icon {
+    margin: 5px;
+    font-size: 18px;
+  }
+
+  input {
+    border: none;
+    color: hsl(0, 0%, 52%);
+    width: 90%;
+    font-size: 22px;
+    vertical-align: top;
+  }
+}
+
+.searchDark {
+  width: 30%;
+  margin-left: 40px;
+  text-align: left;
+  vertical-align: center;
+  background: hsl(209, 23%, 22%);
+  color: hsl(0, 0%, 100%);
+
+  ion-icon {
+    margin: 5px;
+    font-size: 18px;
+  }
+
+  input {
+    border: none;
+    background: hsl(209, 23%, 22%);
+    color: hsl(0, 0%, 52%);
+    width: 90%;
+    font-size: 22px;
+    vertical-align: top;
+  }
+}

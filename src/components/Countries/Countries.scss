@@ -1,8 +1,11 @@
 .countriesContainer {
   font-size: 14px;
   font-weight: 600;
+  padding: 15px 25px;
+}
+
+.cardsContainer {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  padding: 15px 25px;
 }
