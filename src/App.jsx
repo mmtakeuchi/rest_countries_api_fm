@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "./App.scss";
 import Nav from "./components/Nav/Nav";
 import Countries from "./components/Countries/Countries";

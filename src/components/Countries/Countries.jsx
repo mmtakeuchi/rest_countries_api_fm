@@ -3,6 +3,7 @@ import axios from "axios";
 import "./Countries.scss";
 import CountryCard from "../CountryCard/CountryCard";
 import SearchInput from "../SearchInput/SearchInput";
+import FilterButton from "../FilterButton/FilterButton";
 
 const BASE_URL = "https://restcountries.eu/rest/v2";
 
@@ -22,43 +23,49 @@ const Countries = ({ screen }) => {
   };
 
   const searchCountries = async (query) => {
-    const data = await axios
-      .get(`${BASE_URL}/name/${query}`)
-      .then((resp) => resp.data)
-      .catch((err) => console.log(err));
-    if (data) {
-      setSearch(data);
-      setCountries(data);
+    console.log(query === "");
+    if (query !== "") {
+      const data = await axios
+        .get(`${BASE_URL}/name/${query}`)
+        .then((resp) => resp.data)
+        .catch((err) => console.log(err));
+      if (data) {
+        setSearch(data);
+        setCountries(data);
+      }
+    } else {
+      fetchCountries();
+    }
+  };
+
+  const filterCountries = (selection) => {
+    console.log(selection);
+    console.log(countries.filter((country) => country.region === selection));
+    fetchCountries();
+    if (selection !== "") {
+      setCountries(countries.filter((country) => country.region === selection));
     }
   };
 
   useEffect(() => fetchCountries(), []);
-  console.log(search);
+  console.log(countries);
 
-  const setCountryCards = search.length
-    ? search.map((country) => (
-        <CountryCard
-          country={country}
-          key={country.numericCode}
-          screen={screen}
-        />
-      ))
-    : countries.map((country) => (
-        <CountryCard
-          country={country}
-          key={country.numericCode}
-          screen={screen}
-        />
-      ));
+  const setCountryCards = countries.map((country) => (
+    <CountryCard country={country} key={country.numericCode} screen={screen} />
+  ));
 
   return (
     <div className="countriesContainer">
-      <SearchInput screen={screen} searchCountries={searchCountries} />
-      {search.length ? (
+      <div className="countriesHeader">
+        <SearchInput screen={screen} searchCountries={searchCountries} />
+        <FilterButton screen={screen} filterCountries={filterCountries} />
+      </div>
+      {/* {search ? (
         <div className="cardsContainer">{search && setCountryCards}</div>
       ) : (
         <div className="cardsContainer">{countries && setCountryCards}</div>
-      )}
+      )} */}
+      {countries && <div className="cardsContainer">{setCountryCards}</div>}
     </div>
   );
 };

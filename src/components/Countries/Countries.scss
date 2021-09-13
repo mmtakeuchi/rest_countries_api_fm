@@ -4,6 +4,12 @@
   padding: 15px 25px;
 }
 
+.countriesHeader {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 10px;
+}
+
 .cardsContainer {
   display: flex;
   flex-wrap: wrap;
