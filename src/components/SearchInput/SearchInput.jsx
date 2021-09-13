@@ -1,7 +1,9 @@
 import React, { useState } from "react";
+import { useHistory, useLocation } from "react-router-dom";
 import "./SearchInput.scss";
 
 const SearchInput = ({ screen, searchCountries }) => {
+  const history = useHistory();
   const [query, setQuery] = useState("");
 
   const handleInput = (e) => {
@@ -11,6 +13,8 @@ const SearchInput = ({ screen, searchCountries }) => {
   const handleSearch = (e) => {
     e.preventDefault();
     searchCountries(query);
+    setQuery("");
+    history.push(`/search/${query}`);
   };
 
   return (
