@@ -1,10 +1,13 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./Nav.scss";
 
 const Nav = ({ toggleScreen, screen }) => {
   return (
     <nav className={screen ? "light" : "dark"}>
-      <span className="logo">Where in the World?</span>
+      <Link to="/" className="link">
+        <span className="logo">Where in the World?</span>
+      </Link>
       <button onClick={toggleScreen}>
         {screen ? (
           <>

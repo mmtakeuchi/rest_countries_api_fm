@@ -4,6 +4,11 @@ nav {
   background: hsl(0, 0%, 100%);
   padding: 15px 50px;
 
+  .link {
+    text-decoration: none;
+    color: hsl(209, 23%, 22%);
+  }
+
   .logo {
     font-size: 25px;
     font-weight: 800;
@@ -28,6 +33,10 @@ nav {
 .dark {
   background: hsl(209, 23%, 22%);
   color: hsl(0, 0%, 100%);
+
+  .link {
+    color: hsl(0, 0%, 100%);
+  }
 
   ion-icon {
     color: hsl(0, 0%, 100%);
