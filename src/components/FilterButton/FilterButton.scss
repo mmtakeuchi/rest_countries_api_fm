@@ -20,3 +20,10 @@
   background: hsl(209, 23%, 22%);
   color: hsl(0, 0%, 100%);
 }
+
+@media screen and (min-width: 400px) {
+  .filter {
+    width: 100%;
+    text-align: start;
+  }
+}

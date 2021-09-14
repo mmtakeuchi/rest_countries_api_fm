@@ -41,3 +41,12 @@
     vertical-align: top;
   }
 }
+
+@media screen and (min-width: 400px) {
+  .search {
+    width: 100%;
+  }
+  .searchDark {
+    width: 100%;
+  }
+}
