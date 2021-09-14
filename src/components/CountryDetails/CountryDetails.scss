@@ -1,6 +1,6 @@
 .countryContainer {
   text-align: left;
-  height: auto;
+  height: 100%;
 
   .backBtn {
     font-size: 16px;
@@ -84,6 +84,41 @@
       .borderCountries {
         width: 100%;
         margin-top: 30px;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 400px) {
+  .countryContainer {
+    height: auto;
+
+    .backBtn {
+      margin: 20px 30px;
+    }
+
+    .back {
+      margin: 20px 30px;
+    }
+
+    .country {
+      margin: 25px 30px;
+
+      img {
+        width: 100%;
+      }
+
+      .countryInfo {
+        width: 100%;
+        padding: 10px 30px;
+
+        .countryStats {
+          flex-direction: column;
+
+          .row {
+            width: 100%;
+          }
+        }
       }
     }
   }
