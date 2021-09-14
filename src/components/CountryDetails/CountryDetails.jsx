@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
-import { useLocation } from "react-router";
+import { useHistory, useLocation } from "react-router";
 import axios from "axios";
 import "./CountryDetails.scss";
 
 const CountryDetails = ({ screen }) => {
   const location = useLocation();
+  const history = useHistory();
   const [country, setCountry] = useState({});
   const countryId = location.pathname.split("/")[2];
   console.log(country);
@@ -28,7 +29,7 @@ const CountryDetails = ({ screen }) => {
 
   return (
     <div className="countryContainer">
-      <button className="backBtn">
+      <button className="backBtn" onClick={() => history.push("/")}>
         <ion-icon name="arrow-back-outline"></ion-icon> Back
       </button>
 

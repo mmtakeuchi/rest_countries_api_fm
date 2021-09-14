@@ -8,8 +8,12 @@ const FilterButton = ({ screen, filterCountries }) => {
 
   const handleFilter = (e) => {
     setSelection(e.target.value);
-    filterCountries(e.target.value);
-    history.push(`/filter/${e.target.value}`);
+    if (e.target.value !== "") {
+      filterCountries(e.target.value);
+      history.push(`/filter/${e.target.value}`);
+    } else {
+      history.push("/");
+    }
   };
 
   return (

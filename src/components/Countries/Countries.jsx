@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useLocation } from "react-router";
+import { useHistory, useLocation } from "react-router";
 import axios from "axios";
 import "./Countries.scss";
 import CountryCard from "../CountryCard/CountryCard";
@@ -10,10 +10,12 @@ const BASE_URL = "https://restcountries.eu/rest/v2";
 
 const Countries = ({ screen }) => {
   const location = useLocation();
+  const history = useHistory();
   const [countries, setCountries] = useState([]);
-  const [filter, setFilter] = useState([]);
   const [results, setResults] = useState([]);
   const path = location.pathname.split("/");
+  console.log(countries);
+  console.log("results", results);
 
   const fetchCountries = async () => {
     const data = await axios
@@ -27,7 +29,6 @@ const Countries = ({ screen }) => {
 
   const searchCountries = async (query) => {
     setResults([]);
-    setFilter([]);
     if (query) {
       const data = await axios
         .get(`${BASE_URL}/name/${query}`)
@@ -43,26 +44,38 @@ const Countries = ({ screen }) => {
 
   const filterCountries = (selection) => {
     setResults([]);
-    setFilter(countries);
     if (selection !== "") {
       setResults(countries.filter((country) => country.region === selection));
+    } else {
+      history.push("/");
     }
   };
 
+  useEffect(() => fetchCountries(), []);
   useEffect(() => {
     setResults([]);
-    if (path[2] === "search") {
-      searchCountries(path[3]).then((data) => setResults(data));
-    } else if (path[2] === "filter") {
-      filterCountries(path[3]).then((data) => setResults(data));
+    console.log(path);
+    if (path[1] === "search") {
+      console.log("search");
+      searchCountries(path[2]);
+    } else if (path[1] === "filter") {
+      if (path[2] !== "") {
+        filterCountries(path[2]);
+      } else {
+        history.push("/");
+      }
     }
   }, [location.pathname]);
 
-  useEffect(() => fetchCountries(), []);
-
-  const setCountryCards = countries.map((country) => (
-    <CountryCard country={country} key={country.numericCode} screen={screen} />
-  ));
+  const setCountryCards =
+    countries &&
+    countries.map((country) => (
+      <CountryCard
+        country={country}
+        key={country.numericCode}
+        screen={screen}
+      />
+    ));
 
   const setSearchCards =
     results &&
