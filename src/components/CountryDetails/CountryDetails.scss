@@ -1,11 +1,30 @@
 .countryContainer {
   text-align: left;
+  height: auto;
 
   .backBtn {
     font-size: 16px;
     font-weight: 300;
     background: hsl(0, 0%, 100%);
     border: 1px solid hsl(0, 0%, 52%);
+    border-radius: 5px;
+    padding: 10px 30px;
+    margin: 50px 0 60px 70px;
+
+    ion-icon {
+      vertical-align: top;
+      font-size: 16px;
+      font-weight: 900;
+    }
+  }
+
+  .back {
+    font-size: 16px;
+    font-weight: 300;
+    color: hsl(0, 0%, 100%);
+    border: 1px solid hsl(200, 15%, 8%);
+    border-radius: 5px;
+    background: hsl(209, 23%, 22%);
     padding: 10px 30px;
     margin: 50px 0 60px 70px;
 
@@ -23,6 +42,7 @@
     flex-wrap: wrap;
     text-align: left;
     margin: 55px;
+    font-size: 16px;
 
     img {
       width: 45%;

@@ -29,11 +29,14 @@ const CountryDetails = ({ screen }) => {
 
   return (
     <div className="countryContainer">
-      <button className="backBtn" onClick={() => history.push("/")}>
+      <button
+        className={screen ? "backBtn" : "back dark"}
+        onClick={() => history.push("/")}
+      >
         <ion-icon name="arrow-back-outline"></ion-icon> Back
       </button>
 
-      <div className={screen ? "country light" : "country dark"}>
+      <div className={screen ? "country light" : "country night"}>
         <img src={country.flag} alt={country.name} />
 
         <div className="countryInfo">
