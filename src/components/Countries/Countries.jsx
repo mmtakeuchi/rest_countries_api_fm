@@ -14,8 +14,6 @@ const Countries = ({ screen }) => {
   const [countries, setCountries] = useState([]);
   const [results, setResults] = useState([]);
   const path = location.pathname.split("/");
-  console.log(countries);
-  console.log("results", results);
 
   const fetchCountries = async () => {
     const data = await axios
@@ -54,9 +52,7 @@ const Countries = ({ screen }) => {
   useEffect(() => fetchCountries(), []);
   useEffect(() => {
     setResults([]);
-    console.log(path);
     if (path[1] === "search") {
-      console.log("search");
       searchCountries(path[2]);
     } else if (path[1] === "filter") {
       if (path[2] !== "") {

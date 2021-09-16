@@ -47,7 +47,7 @@ nav {
   }
 }
 
-@media screen and (min-width: 400px) {
+@media screen and (max-width: 400px) {
   nav {
     justify-content: space-around;
     padding: 15px 5px;
