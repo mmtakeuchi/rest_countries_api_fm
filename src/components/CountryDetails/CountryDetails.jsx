@@ -1,14 +1,15 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { useHistory, useLocation } from "react-router";
 import axios from "axios";
 import "./CountryDetails.scss";
+import { ThemeContext } from "../../theme-context";
 
 const CountryDetails = ({ screen }) => {
+  const theme = useContext(ThemeContext);
   const location = useLocation();
   const history = useHistory();
   const [country, setCountry] = useState({});
   const countryId = location.pathname.split("/")[2];
-  console.log(country);
 
   const fetchCountry = async (id) => {
     const data = await axios
@@ -30,13 +31,13 @@ const CountryDetails = ({ screen }) => {
   return (
     <div className="countryContainer">
       <button
-        className={screen ? "backBtn" : "back dark"}
+        className={theme === "light" ? "backBtn" : "back dark"}
         onClick={() => history.push("/")}
       >
         <ion-icon name="arrow-back-outline"></ion-icon> Back
       </button>
 
-      <div className={screen ? "country light" : "country night"}>
+      <div className={theme === "light" ? "country light" : "country night"}>
         <img src={country.flag} alt={country.name} />
 
         <div className="countryInfo">

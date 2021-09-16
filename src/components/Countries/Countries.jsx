@@ -1,14 +1,16 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { useHistory, useLocation } from "react-router";
 import axios from "axios";
 import "./Countries.scss";
 import CountryCard from "../CountryCard/CountryCard";
 import SearchInput from "../SearchInput/SearchInput";
 import FilterButton from "../FilterButton/FilterButton";
+import { ThemeContext } from "../../theme-context";
 
 const BASE_URL = "https://restcountries.eu/rest/v2";
 
 const Countries = ({ screen }) => {
+  const theme = useContext(ThemeContext);
   const location = useLocation();
   const history = useHistory();
   const [countries, setCountries] = useState([]);

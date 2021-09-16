@@ -1,6 +1,5 @@
 .countryContainer {
   text-align: left;
-  height: 100%;
 
   .backBtn {
     font-size: 16px;
@@ -41,7 +40,7 @@
     align-items: center;
     flex-wrap: wrap;
     text-align: left;
-    margin: 55px;
+    padding: 55px;
     font-size: 16px;
 
     img {
@@ -91,8 +90,6 @@
 
 @media screen and (max-width: 400px) {
   .countryContainer {
-    height: auto;
-
     .backBtn {
       margin: 20px 30px;
     }

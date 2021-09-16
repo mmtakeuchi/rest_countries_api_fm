@@ -7,13 +7,7 @@ import CountryDetails from "./components/CountryDetails/CountryDetails";
 import { ThemeContext } from "./theme-context";
 
 const App = () => {
-  const [screen, setScreen] = useState(true);
   const [theme, setTheme] = useState(ThemeContext);
-  console.log(theme);
-
-  const toggleScreen = () => {
-    setScreen(!screen);
-  };
 
   const toggleTheme = () => {
     setTheme(theme === "light" ? "dark" : "light");
@@ -23,25 +17,20 @@ const App = () => {
     <ThemeContext.Provider value={theme}>
       <BrowserRouter>
         <div className="App">
-          <Nav
-            toggleScreen={toggleScreen}
-            screen={screen}
-            toggleTheme={toggleTheme}
-          />
-          {/* <div className={screen ? "container day" : "container night"}> */}
-          <div className={`container ${theme}`}>
+          <Nav toggleTheme={toggleTheme} />
+          <div className={`container ${theme === "light" ? "day" : "night"}`}>
             <Switch>
               <Route exact path="/">
-                <Countries screen={screen} />
+                <Countries />
               </Route>
               <Route path="/search/:id">
-                <Countries screen={screen} />
+                <Countries />
               </Route>
               <Route path="/filter/:id">
-                <Countries screen={screen} />
+                <Countries />
               </Route>
               <Route path="/countries/:id">
-                <CountryDetails screen={screen} />
+                <CountryDetails />
               </Route>
             </Switch>
           </div>

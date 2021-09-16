@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
+import { ThemeContext } from "../../theme-context";
 import "./CountryCard.scss";
 
-const CountryCard = ({ country, screen }) => {
+const CountryCard = ({ country }) => {
+  const theme = useContext(ThemeContext);
   return (
-    <div className={screen ? "card light" : "card dark"}>
+    <div className={theme === "light" ? "card light" : "card dark"}>
       <Link
         to={`/countries/${country.alpha2Code.toLowerCase()}`}
         className="link"

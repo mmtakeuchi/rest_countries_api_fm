@@ -1,8 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { useHistory } from "react-router-dom";
+import { ThemeContext } from "../../theme-context";
 import "./SearchInput.scss";
 
-const SearchInput = ({ screen, searchCountries }) => {
+const SearchInput = ({ searchCountries }) => {
+  const theme = useContext(ThemeContext);
   const history = useHistory();
   const [query, setQuery] = useState("");
 
@@ -19,7 +21,7 @@ const SearchInput = ({ screen, searchCountries }) => {
 
   return (
     <form
-      className={screen ? "search searchLight" : "screen searchDark"}
+      className={theme === "light" ? "search searchLight" : "screen searchDark"}
       onSubmit={handleSearch}
     >
       <ion-icon name="search-outline" className="searchIcon"></ion-icon>

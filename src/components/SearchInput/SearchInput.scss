@@ -1,5 +1,5 @@
 .search {
-  width: 30%;
+  width: 40%;
   margin-left: 40px;
   text-align: left;
   vertical-align: center;
@@ -13,14 +13,14 @@
   input {
     border: none;
     color: hsl(0, 0%, 52%);
-    width: 90%;
+    width: 80%;
     font-size: 22px;
     vertical-align: top;
   }
 }
 
 .searchDark {
-  width: 30%;
+  width: 40%;
   margin-left: 40px;
   text-align: left;
   vertical-align: center;
@@ -36,13 +36,13 @@
     border: none;
     background: hsl(209, 23%, 22%);
     color: hsl(0, 0%, 52%);
-    width: 90%;
+    width: 80%;
     font-size: 22px;
     vertical-align: top;
   }
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 500px) {
   .search {
     width: 100%;
   }

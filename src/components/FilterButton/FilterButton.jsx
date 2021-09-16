@@ -1,8 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { useHistory } from "react-router";
+import { ThemeContext } from "../../theme-context";
 import "./FilterButton.scss";
 
-const FilterButton = ({ screen, filterCountries }) => {
+const FilterButton = ({ filterCountries }) => {
+  const theme = useContext(ThemeContext);
   const history = useHistory();
   const [selection, setSelection] = useState("");
 
@@ -20,7 +22,7 @@ const FilterButton = ({ screen, filterCountries }) => {
     <form className="filter">
       <select
         name="regions"
-        className={screen ? "regionFilter" : " darkFilter"}
+        className={theme === "light" ? "regionFilter" : " darkFilter"}
         value={selection}
         onChange={handleFilter}
       >
