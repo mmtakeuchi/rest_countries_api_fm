@@ -7,7 +7,7 @@ import CountryDetails from "./components/CountryDetails/CountryDetails";
 import { ThemeContext } from "./theme-context";
 
 const App = () => {
-  const [theme, setTheme] = useState(ThemeContext);
+  const [theme, setTheme] = useState("light");
 
   const toggleTheme = () => {
     setTheme(theme === "light" ? "dark" : "light");

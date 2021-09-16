@@ -1,16 +1,14 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect } from "react";
 import { useHistory, useLocation } from "react-router";
 import axios from "axios";
 import "./Countries.scss";
 import CountryCard from "../CountryCard/CountryCard";
 import SearchInput from "../SearchInput/SearchInput";
 import FilterButton from "../FilterButton/FilterButton";
-import { ThemeContext } from "../../theme-context";
 
 const BASE_URL = "https://restcountries.eu/rest/v2";
 
-const Countries = ({ screen }) => {
-  const theme = useContext(ThemeContext);
+const Countries = () => {
   const location = useLocation();
   const history = useHistory();
   const [countries, setCountries] = useState([]);
@@ -68,28 +66,20 @@ const Countries = ({ screen }) => {
   const setCountryCards =
     countries &&
     countries.map((country) => (
-      <CountryCard
-        country={country}
-        key={country.numericCode}
-        screen={screen}
-      />
+      <CountryCard country={country} key={country.numericCode} />
     ));
 
   const setSearchCards =
     results &&
     results.map((country) => (
-      <CountryCard
-        country={country}
-        key={country.numericCode}
-        screen={screen}
-      />
+      <CountryCard country={country} key={country.numericCode} />
     ));
 
   return (
     <div className="countriesContainer">
       <div className="countriesHeader">
-        <SearchInput screen={screen} searchCountries={searchCountries} />
-        <FilterButton screen={screen} filterCountries={filterCountries} />
+        <SearchInput searchCountries={searchCountries} />
+        <FilterButton filterCountries={filterCountries} />
       </div>
       {location.pathname === "/" ? (
         <div className="cardsContainer">{countries && setCountryCards}</div>
