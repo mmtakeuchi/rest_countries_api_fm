@@ -11,7 +11,7 @@ const CountryCard = ({ country }) => {
         to={`/countries/${country.alpha2Code.toLowerCase()}`}
         className="link"
       >
-        <img src={country.flag} alt={country.name} />
+        <img src={country.flags[0]} alt={country.name} />
       </Link>
       <div className="countryInfo">
         <p className="countryName">{country.name}</p>

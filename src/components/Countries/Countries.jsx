@@ -6,7 +6,7 @@ import CountryCard from "../CountryCard/CountryCard";
 import SearchInput from "../SearchInput/SearchInput";
 import FilterButton from "../FilterButton/FilterButton";
 
-const BASE_URL = "https://restcountries.eu/rest/v2";
+const BASE_URL = "https://restcountries.com/v2";
 
 const Countries = () => {
   const location = useLocation();
@@ -14,6 +14,8 @@ const Countries = () => {
   const [countries, setCountries] = useState([]);
   const [results, setResults] = useState([]);
   const path = location.pathname.split("/");
+  console.log(countries);
+  console.log(results);
 
   const fetchCountries = async () => {
     const data = await axios
@@ -43,7 +45,9 @@ const Countries = () => {
   const filterCountries = (selection) => {
     setResults([]);
     if (selection !== "") {
-      setResults(countries.filter((country) => country.region === selection));
+      setResults(
+        countries.filter((country) => country.continent === selection)
+      );
     } else {
       history.push("/");
     }

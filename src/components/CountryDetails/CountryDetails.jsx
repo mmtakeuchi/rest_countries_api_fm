@@ -10,10 +10,12 @@ const CountryDetails = ({ screen }) => {
   const history = useHistory();
   const [country, setCountry] = useState({});
   const countryId = location.pathname.split("/")[2];
+  console.log(countryId);
+  console.log(country);
 
   const fetchCountry = async (id) => {
     const data = await axios
-      .get(`https://restcountries.eu/rest/v2/alpha/${id}`)
+      .get(`https://restcountries.com/v2/alpha/${id}`)
       .then((resp) => resp.data)
       .catch((err) => console.log(err));
     if (data) {
@@ -38,7 +40,7 @@ const CountryDetails = ({ screen }) => {
       </button>
 
       <div className={theme === "light" ? "country light" : "country night"}>
-        <img src={country.flag} alt={country.name} />
+        <img src={country.flags && country.flags[0]} alt={country.name} />
 
         <div className="countryInfo">
           <p className="countryName">{country.name}</p>
