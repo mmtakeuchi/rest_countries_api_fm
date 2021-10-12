@@ -11,10 +11,15 @@ const CountryCard = ({ country }) => {
         to={`/countries/${country.alpha2Code.toLowerCase()}`}
         className="link"
       >
-        <img src={country.flags[0]} alt={country.name} />
+        <img src={country.flag} alt={country.name} />
       </Link>
       <div className="countryInfo">
-        <p className="countryName">{country.name}</p>
+        <Link
+          to={`/countries/${country.alpha2Code.toLowerCase()}`}
+          className="link"
+        >
+          <p className="countryName">{country.name}</p>
+        </Link>
         <p>
           Population: <span>{country.population}</span>
         </p>

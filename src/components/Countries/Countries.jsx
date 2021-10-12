@@ -14,8 +14,6 @@ const Countries = () => {
   const [countries, setCountries] = useState([]);
   const [results, setResults] = useState([]);
   const path = location.pathname.split("/");
-  console.log(countries);
-  console.log(results);
 
   const fetchCountries = async () => {
     const data = await axios
