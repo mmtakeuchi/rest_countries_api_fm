@@ -1,0 +1,18 @@
+.attribution {
+  margin-top: auto;
+  font-size: 11px;
+  text-align: center;
+  padding: 10px;
+
+  .link {
+    text-decoration: none;
+    color: black;
+    font-weight: 700;
+    text-decoration: underline;
+    cursor: pointer;
+
+    &.dark {
+      color: white;
+    }
+  }
+}

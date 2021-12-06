@@ -4,6 +4,7 @@ import "./App.scss";
 import Nav from "./components/Nav/Nav";
 import Countries from "./components/Countries/Countries";
 import CountryDetails from "./components/CountryDetails/CountryDetails";
+import Attribution from "./components/Attribution/Attribution";
 import { ThemeContext } from "./theme-context";
 
 const App = () => {
@@ -34,6 +35,7 @@ const App = () => {
               </Route>
             </Switch>
           </div>
+          <Attribution />
         </div>
       </BrowserRouter>
     </ThemeContext.Provider>

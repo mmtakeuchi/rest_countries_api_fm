@@ -16,7 +16,7 @@ const CountryCard = ({ country }) => {
       <div className="countryInfo">
         <Link
           to={`/countries/${country.alpha2Code.toLowerCase()}`}
-          className="link"
+          className={`link ${theme === "light" ? "light" : "dark"}`}
         >
           <p className="countryName">{country.name}</p>
         </Link>

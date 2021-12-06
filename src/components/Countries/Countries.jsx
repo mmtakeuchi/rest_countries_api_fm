@@ -43,9 +43,7 @@ const Countries = () => {
   const filterCountries = (selection) => {
     setResults([]);
     if (selection !== "") {
-      setResults(
-        countries.filter((country) => country.continent === selection)
-      );
+      setResults(countries.filter((country) => country.region === selection));
     } else {
       history.push("/");
     }

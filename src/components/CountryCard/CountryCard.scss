@@ -26,5 +26,9 @@
   .link {
     text-decoration: none;
     color: black;
+
+    &.dark {
+      color: white;
+    }
   }
 }

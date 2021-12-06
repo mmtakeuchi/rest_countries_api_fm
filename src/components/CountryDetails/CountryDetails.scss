@@ -8,7 +8,7 @@
     border: 1px solid hsl(0, 0%, 52%);
     border-radius: 5px;
     padding: 10px 30px;
-    margin: 50px 0 60px 70px;
+    margin: 45px 0 10px 70px;
 
     ion-icon {
       vertical-align: top;
@@ -25,7 +25,7 @@
     border-radius: 5px;
     background: hsl(209, 23%, 22%);
     padding: 10px 30px;
-    margin: 50px 0 60px 70px;
+    margin: 45px 0 10px 70px;
 
     ion-icon {
       vertical-align: top;
@@ -40,18 +40,18 @@
     align-items: center;
     flex-wrap: wrap;
     text-align: left;
-    padding: 55px;
+    margin: 50px auto;
     font-size: 16px;
 
     img {
       width: 45%;
-      padding: 20px;
+      padding: 10px;
     }
 
     .countryInfo {
       width: 45%;
       font-weight: 700;
-      padding: 50px;
+      padding: 40px;
 
       ul {
         margin: 0;

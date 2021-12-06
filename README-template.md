@@ -24,7 +24,7 @@ Click on a country to see more detailed information on a separate page
 Click through to the border countries on the detail page
 Toggle the color scheme between light and dark mode (optional)
 
-### Screenshot
+### Screenshots
 
 Countries (Light Mode)
 
@@ -38,11 +38,9 @@ Country Details
 
 <img src="./public/images/country_details.png" width=1000>
 
-**Note: Delete this note and the paragraphs above when you add your screenshot. If you prefer not to add a screenshot, feel free to remove this entire section.**
-
 ### Links
 
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Live Site URL: [Demo](https://country-flags-react.netlify.app)
 
 ## My process
 
